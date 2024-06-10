@@ -19,10 +19,10 @@ emotion_dict = {
     5: 'surprise'
 }
 
-with open(r'models\tokenizer.json', 'r') as json_file:
+with open('models/tokenizer.json', 'r') as json_file:
     tokenizer_json = json_file.read()
     tokenizer = tokenizer_from_json(tokenizer_json)
-model = load_model(r'models\final_model.keras')
+model = load_model('models/final_model.keras')
 
 # Set the title of the Streamlit app
 st.title("Emotion detection using text")
@@ -60,7 +60,7 @@ if st.button("Predict"):
     elif audio_file:
         file='uploaded_audio.wav'
         with sr.AudioFile(file) as source:
-    # Record the audio data
+            # Record the audio data
             audio_data = r.record(source)
             
             try:
